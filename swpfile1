@@ -1,0 +1,7 @@
+tx = fun.buildTransaction({
+  'from': account_address,
+  'nonce': w3.eth.getTransactionCount(account_address),
+  'gasPrice': Web3.toWei('30', 'gwei'),
+})
+signed_tx = w3.eth.account.signTransaction(tx, my_account.key)
+emitted = w3.eth.sendRawTransaction(signed_tx.rawTransaction)
